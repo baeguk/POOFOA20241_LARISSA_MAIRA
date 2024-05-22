@@ -36,5 +36,17 @@ namespace SistemaFinanceiroTest
             //verificação
             Assert.AreEqual(saldoFinal, conta1.Saldo);
         }
+
+        [TestMethod]
+        public void ValorSaqueMaiorSaldo()
+        {
+            //cenario
+            decimal saldoInicial = 1000;
+            decimal valorSaque = 1500;
+            Conta conta1 = new Conta(123, saldoInicial);
+
+            //verificação
+            Assert.ThrowsException<ArgumentException>(() => conta1.Saque(valorSaque));
+        }
     }
 }

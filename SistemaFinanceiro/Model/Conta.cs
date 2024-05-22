@@ -40,9 +40,18 @@ namespace SistemaFinanceiro.Model
             _saldo += valor;
         }
 
-        public void Saque(decimal valor)
+        public decimal Saque(decimal valor)
         {
-            _saldo -= valor;
+            if(_saldo - valor >= 0)
+            {
+                _saldo -= valor;
+                return _saldo;
+            }
+            else
+            {
+                throw new ArgumentException("Valor do saque ultrapassa o saldo");
+            }
+            
         }
     }
 }
