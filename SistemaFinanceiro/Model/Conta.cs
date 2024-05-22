@@ -11,6 +11,8 @@ namespace SistemaFinanceiro.Model
         private long _numero;
         private decimal _saldo;
 
+        public Agencia agencia;
+
         public Conta(long numero)
         {
             _numero = numero;
