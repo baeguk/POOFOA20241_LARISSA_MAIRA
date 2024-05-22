@@ -34,5 +34,15 @@ namespace SistemaFinanceiro.Model
         public decimal Saldo { get => _saldo; }
 
         // crie o código de teste para testar o método de depósito e saque da conta
+
+        public void Deposito(decimal valor)
+        {
+            _saldo += valor;
+        }
+
+        public void Saque(decimal valor)
+        {
+            _saldo -= valor;
+        }
     }
 }
